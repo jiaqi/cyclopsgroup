@@ -1,4 +1,5 @@
 name: Maven release snapshot
+# TODO: This workflow is being replaced by maven_publish.yml
 
 on:
   workflow_call:

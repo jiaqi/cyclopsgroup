@@ -1,4 +1,4 @@
-name: Maven verify
+name: maven_verify
 
 on:
   workflow_call:
@@ -10,7 +10,7 @@ on:
         description: "The full mvn command to run."
 
 jobs:
-  shared_job:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

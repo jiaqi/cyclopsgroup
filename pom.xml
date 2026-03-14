@@ -6,10 +6,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.cyclopsgroup</groupId>
   <artifactId>cyclopsgroup-parent</artifactId>
-  <name>CyclopsGroup OSS</name>
-  <version>0.7.0</version>
+  <name>Cyclops Group OSS</name>
+  <version>0.8.0-SNAPSHOT</version>
   <description>Base POM for cyclopsgroup projects</description>
-  <url>http://www.cyclopsgroup.org</url>
+  <url>http://github.com/jiaqi</url>
   <packaging>pom</packaging>
   <inceptionYear>2003</inceptionYear>
   <licenses>
@@ -21,12 +21,12 @@
   </licenses>
   <issueManagement>
     <system>github.com</system>
-    <url>https://github.com/issues</url>
+    <url>https://github.com/jiaqi/cyclopsgroup/issues</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:git@github.com:cyclopsgroup/cyclopsgroup.git</connection>
-    <developerConnection>scm:git:git@github.com:cyclopsgroup/cyclopsgroup.git</developerConnection>
-    <url>git@github.com:cyclopsgroup/cyclopsgroup.git</url>
+    <connection>scm:git:git@github.com:jiaqi/cyclopsgroup.git</connection>
+    <developerConnection>scm:git:git@github.com:jiaqi/cyclopsgroup.git</developerConnection>
+    <url>git@github.com:jiaqi/cyclopsgroup.git</url>
   </scm>
   <modules>
     <module>cyclopsgroup-java-parent</module>
@@ -34,51 +34,22 @@
   <developers>
     <developer>
       <id>jiaqi</id>
-      <email>jiaqi@cyclopsgroup.org</email>
+      <email>jiaqi.guo@gmail.com</email>
       <name>Jiaqi Guo</name>
-      <timezone>-5</timezone>
-      <url>http://www.cyclopsgroup.org</url>
+      <timezone>-6</timezone>
+      <url>http://github.com/jiaqi</url>
     </developer>
   </developers>
-  <repositories>
-    <repository>
-      <id>cyclopsgroup.snapshot</id>
-      <name>CyclopsGroup snapshot repository</name>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <url>http://${dist.server.name}/maven/snapshot-repository</url>
-    </repository>
-  </repositories>
   <distributionManagement>
     <snapshotRepository>
-      <id>cyclopsgroup.server</id>
-      <name>CyclopsGroup snapshot server</name>
-      <url>s3://${dist.bucketName}/maven/snapshot-repository</url>
+      <id>github</id>
+      <name>GitHub jiaqi Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/jiaqi/cyclopsgroup</url>
     </snapshotRepository>
+    <repository>
+      <id>github</id>
+      <name>GitHub jiaqi Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/jiaqi/cyclopsgroup</url>
+    </repository>
   </distributionManagement>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>3.2.8</version>
-        <configuration>
-          <keyname>${dist.gpg.keyName}</keyname>
-          <passphrase>${dist.gpg.passphrase}</passphrase>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dist.bucketName>dist.cyclopsgroup.org</dist.bucketName>
-    <dist.server.name>dist.cyclopsgroup.org</dist.server.name>
-    <dist.gpg.keyName>cyclopsgroup-repository</dist.gpg.keyName>
-    <dist.gpg.passphrase>change-me</dist.gpg.passphrase>
-  </properties>
 </project>

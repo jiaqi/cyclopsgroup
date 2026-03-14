@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_and_verify:
-    uses: .github/workflows/maven-verify.yml
+  verify:
+    uses: ./.github/workflows/maven-verify.yml
     with:
         cmd: mvn -B verify

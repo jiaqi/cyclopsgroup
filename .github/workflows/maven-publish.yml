@@ -8,6 +8,11 @@ on:
         required: false
         default: "mvn -B --update-snapshots verify package javadoc:javadoc site"
         description: "The full mvn command to run to generate artifacts."
+      publish_site:
+        type: boolean
+        required: false
+        default: true
+        description: "Publsih maven generated site to Github page."
 
 jobs:
   publish:
@@ -31,8 +36,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload site
+      if: ${{ inputs.publish_site }}
       uses: actions/upload-pages-artifact@v4
       with:
         path: target/site
     - name: Deploy site
+      if: ${{ inputs.publish_site }}
       uses: actions/deploy-pages@v4

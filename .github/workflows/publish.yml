@@ -1,0 +1,21 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+      - seattle
+    paths-ignore:
+      - "**/*.md"
+      - "src/test/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    uses: ./.github/workflows/maven-publish.yml
+    with:
+        cmd: mvn -B verify package
+        publish_site: false

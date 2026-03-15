@@ -6,6 +6,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "maven"
-    directory: "/cyclopsgroup-java-parent"
+    directory: "/"
     schedule:
       interval: "weekly"

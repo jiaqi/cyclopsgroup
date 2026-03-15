@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main
-      - seattle
+      - release
     paths-ignore:
       - "**/*.md"
-      - "src/test/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.sha }}

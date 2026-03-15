@@ -52,4 +52,20 @@
       <url>https://maven.pkg.github.com/jiaqi/cyclopsgroup</url>
     </repository>
   </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.8</version>
+        <configuration>
+          <keyname>${dist.gpg.keyName}</keyname>
+          <passphrase>${dist.gpg.passphrase}</passphrase>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <dist.gpg.keyName>cyclopsgroup-repository</dist.gpg.keyName>
+    <dist.gpg.passphrase>change-me</dist.gpg.passphrase>
+  </properties>
 </project>

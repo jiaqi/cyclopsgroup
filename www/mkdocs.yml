@@ -1,0 +1,22 @@
+site_name: Jiaqi Guo
+site_dir: target
+# logo: cloudpave_logo.png
+theme:
+  name: readthedocs
+  custom_dir: theme
+markdown_extensions:
+  - tables
+  - fenced_code
+  - codehilite:
+      linenums: true
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+extra_css:
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+  - page_layout.css
+  - markdown_style.css
+extra_javascript:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - main.js

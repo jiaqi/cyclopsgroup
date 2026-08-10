@@ -1,15 +1,16 @@
-name: publish
+name: publish_pom
 
 on:
   push:
     branches:
       - main
       - release
-    paths-ignore:
-      - "**/*.md"
+    paths:
+      - "**/pom.xml"
+      - ".github/workflows/*_pom.yml"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.sha }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

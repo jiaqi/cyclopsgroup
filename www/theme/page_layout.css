@@ -1,5 +1,9 @@
 body {
     font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+    code {
+        font-size: 100%;
+    }
 }
 
 a.headerlink {
@@ -10,7 +14,7 @@ a.headerlink {
 @media only screen {
     :root {
         --page-nav-width: 300px;
-        --page-content-size: 120%;
+        --page-content-size: 115%;
         --background-color-1: #D6DBD2;
         --background-color-2: #FAFAFA;
         --background-color-3: #2C363F;
@@ -130,6 +134,16 @@ a.headerlink {
         padding: 24px;
         max-width: 980px;
     }
+
+    body.sidebar-toggled {
+        .wy-nav-side {
+            transform: translateX(-100%);
+        }
+
+        .wy-nav-content-wrap {
+            margin-left: 0px;
+        }
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -139,6 +153,17 @@ a.headerlink {
 
     .wy-nav-side {
         transform: translateX(-100%);
+    }
+
+    body.sidebar-toggled {
+        .wy-nav-side {
+            transform: translateX(100%);
+            box-shadow: 8px 0px 8px #60606060;
+        }
+
+        .wy-nav-content-wrap {
+            margin-left: 0px;
+        }
     }
 }
 

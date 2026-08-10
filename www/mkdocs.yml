@@ -16,7 +16,7 @@ markdown_extensions:
 extra_css:
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - page_layout.css
-  - markdown_style.css
+  #- markdown_style.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.1.min.js
   - main.js

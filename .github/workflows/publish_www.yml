@@ -4,10 +4,8 @@ on:
   push:
     branches:
       - main
-      - seattle
     paths:
       - "www"
-      - ".github/workflows/*_www.yml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

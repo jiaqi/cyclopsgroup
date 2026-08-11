@@ -18,6 +18,6 @@ The complete list of all my open source projects can be found in my [GitHub repo
 
 ## Post 2015
 
-As of now I am no longer actively making progress in these projects, though several continue to be used and supported by volueers thanks to the broader open-source community. Over time, my priorities have naturally shifted. While I remain passionate about solving problems through software engineering, the challenges I now focus on often rely on close, well-structured collaboration across people with diverse skills and expertise, something casual open-source collaboration does not always support effectively.
+As of now I am no longer actively making progress in these projects, though several continue to be used and supported by volueers thanks to the broader open-source community. Over time, my priorities have naturally shifted. While I remain passionate about solving problems through software engineering, the challenges I now focus on often rely on close and well-structured collaboration across people with diverse skills and expertise, something open source with casual collaboration does not always support effectively.
 
-Personal life has also played an important rolerole. As I have grown older, family, children and other personal interests have become increasingly important and have naturually taken priority.
+Personal life has also played an important role. As I have grown older, family, children and other personal interests have become increasingly important and have naturually taken priority.

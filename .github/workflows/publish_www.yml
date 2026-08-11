@@ -6,7 +6,7 @@ on:
       - "www"
     branches:
       - main
-
+      - seattle
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

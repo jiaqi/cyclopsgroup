@@ -2,11 +2,11 @@ name: publish_www
 
 on:
   push:
-    paths:
-      - "www"
     branches:
       - main
       - seattle
+    paths:
+      - "www"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

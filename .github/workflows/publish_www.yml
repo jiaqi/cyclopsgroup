@@ -1,7 +1,10 @@
-name: verify_www
+name: publish_www
 
 on:
   push:
+    branches:
+      - main
+      - seattle
     paths:
       - "www"
       - ".github/workflows/*_www.yml"
@@ -11,8 +14,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build_and_publish:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: Setup Python
@@ -22,3 +29,9 @@ jobs:
           cache: "pip"
       - run: pip install -r requirements.txt
       - run: python -m mkdocs build -f www/mkdocs.yml
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: www/target
+      - uses: actions/deploy-pages@v5
+        

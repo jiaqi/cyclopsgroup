@@ -12,4 +12,4 @@ The website is built with [MKDocs](https://www.mkdocs.org) in a public Github re
 
 Solving problems with computer programming has always been my passion since the days of `DOS` and `BASIC`. Over the years, I have worked on a wide range of projects across companies of different sizes, from tech giants like Google and Amazon to early-stage startups. I have built software for different purposes, from small open-source tools to large-scale enterprise software serving hundreds of millions of users. These days, I am starting a small financial company in The Woodland, Texas.
 
-![The Woodland](/images/the_woodlands.jpg){: width="640"}
+![The Woodland](images/the_woodlands.jpg){: width="640"}

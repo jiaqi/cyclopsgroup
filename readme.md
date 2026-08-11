@@ -2,26 +2,34 @@
 
 ## Overview
 
-This is a repository of CyclopsGroup organization level files. To learn more
-about CyclopsGroup, visit http://www.cyclopsgroup.org.
+This is a user-level repository of resources shared between all my repositories.
+Learn more at [cyclopsgroup.org](https://www.cyclopsgroup.org).
 
-## Maven POM files
+In this repository, there are currently these contents:
 
-### Java parent pom.xml
+* Parent Maven POM files for open source Java projects.
+* Shared Github actions for CI/CD pipelines of other projects.
+* Website of cyclopsgroup.org.
 
-The parent Maven POM of all CyclopsGroup Java open-source projects.
+## For Java developers
 
-### General parent pom.xml
+A few things to be aware of when developing open source projects here.
 
-The parent Maven POM of all CyclopsGroup open-source projects, also the parent
-of the Java parent pom.xml.
+### Code style
 
-## For developers
+As of now, the 0.7.2 version of Java parent POM requires all Java code to
+match https://github.com/google/google-java-format. To format all Java code, run
 
-The following instructions are only for developers of CyclopsGroup open-source
-projects. They are not applicable to everyone.
+```
+mvn fmt:format
+```
 
-### How to release
+before submitting a change.
+
+Most repositories have setup CI/CD to verify the style. Therefore if code isn't in the expected shape, the PR will fail to build.
+
+
+### Release process
 
 * Checkout project, modify the version in POM. Make sure no SNAPSHOT version
 exists in the POM file.
@@ -54,14 +62,3 @@ gpg -ab mypackage-sources-1.0.1.jar
 ...
 jar cvf bundle.jar mypackage*
 ```
-
-### How to format code
-
-As of now, the 0.7.2 version of Java parent POM requires all Java code to
-match https://github.com/google/google-java-format. To format all Java code, run
-
-```
-mvn fmt:format
-```
-
-before submitting a change.

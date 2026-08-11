@@ -11,6 +11,12 @@ a.headerlink {
     visibility: hidden;
 }
 
+.horizontal-tile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 @media only screen {
     :root {
         --page-nav-width: 300px;
@@ -28,6 +34,10 @@ a.headerlink {
     a:link,
     a:visited {
         color: var(--text-color-h);
+    }
+
+    .clickable {
+        cursor: pointer;
     }
 
     .wy-nav-side {
@@ -72,6 +82,12 @@ a.headerlink {
         a:hover {
             background-color: transparent;
             color: var(--text-color-h);
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0px;
+            color: var(--text-color-a);
         }
     }
 

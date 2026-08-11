@@ -2,120 +2,120 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-    <link rel="icon" href="{{ config.logo | url }}" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Base theme styles for default markdown typography & code highlighting -->
-    <link rel="stylesheet" href="{{ 'css/theme.css' | url }}" />
-    <link rel="stylesheet" href="{{ 'css/theme_extra.css' | url }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  <link rel="icon" href="{{ config.logo | url }}" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Base theme styles for default markdown typography & code highlighting -->
+  <link rel="stylesheet" href="{{ 'css/theme.css' | url }}" />
+  <link rel="stylesheet" href="{{ 'css/theme_extra.css' | url }}" />
 
-    {%- for path in config.extra_css %}
-    <link href="{{ path | url }}" rel="stylesheet" />
-    {%- endfor %}
+  {%- for path in config.extra_css %}
+  <link href="{{ path | url }}" rel="stylesheet" />
+  {%- endfor %}
 </head>
 
 <body class="wy-body-for-nav" role="document">
-    <div class="wy-grid-for-nav">
-        <div class="wy-nav-side stick-nav">
-            <div class="wy-top-toolbar">
-                <span>{{ config.site_name }}</span>
-            </div>
-            <div class="wy-menu wy-menu-vertical">
-                <ul id="nav-menu">
-                    {% for nav_item in nav %}
-                    {% if nav_item.children %}
-                    <li>{{ nav_item.title }}
-                        <ul>
-                            {% for nav_item in nav_item.children %}
-                            <li class="{% if nav_item.active %}current{% endif %}">
-                                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li class="{% if nav_item.active %}current{% endif %}">
-                        <span class="material-icons">
-                            {% if nav_item.url == '' %}
-                            home
-                            {% else %}
-                            description
-                            {% endif %}
-                        </span>
-                        {% if nav_item.active %}
-                        <b>{{ nav_item.title }}</b>
-                        {% else %}
-                        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-                        {% endif %}
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="content-wrap">
-                <h2>External links</h2>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <span class="material-icons">inventory</span>
-                        <a href="https://blog.cyclopsgroup.org">
-                            Blogs before 2025
-                        </a>
-                    </li>
-                    <li>
-                        <span><img src="{{ base_url }}/images/github_logo_dark.svg" width="24" height="24" /></span>
-                        <a href="https://github.com/jiaqi">
-                            Github user
-                        </a>
-                    </li>
-                    <li>
-                        <span><img src="{{ base_url }}/images/linkedin_logo_dark.svg" width="24" height="24" /></span>
-                        <a href="https://linkein.com/in/jiaqi">
-                            LinkedIn profile
-                        </a>
-                    </li>
-                    <li>
-                        <span class="material-icons">email</span>
-                        <a href="mailto:jiaqi.guo@gmail.com" title="Email me">
-                            jiaqi.guo@gmail.com
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="wy-nav-content-wrap">
-            <div class="wy-top-toolbar">
-                <span class="material-icons clickable" id="side-panel-toggle" title="Hide/show side panel">
-                    zoom_out_map
-                </span>
-                <span>Home</span>
-                <span class="material-icons">chevron_right</span>
-                <span>{{ page.title }}</span>
-            </div>
-            <div class="wy-nav-content">
-                <div class="content-wrap">
-                    {{ page.content }}
-                </div>
-            </div>
-            <div class="wy-nav-footer">
-                <div class="content-wrap">
-                    <p>Copyright &copy; 2026 Cloudpave, LLC. All rights reserved.</p>
-                    <p>
-                        By using cyclopsgroup.org, you agree to our
-                        <a href="https://docs.cloudpave.com/terms_of_use">
-                            Terms of Use
-                        </a>.
-                    </p>
-                </div>
-            </div>
-        </div>
+  <div class="wy-grid-for-nav">
+    <div class="wy-nav-side stick-nav">
+      <div class="wy-top-toolbar">
+        <span>{{ config.site_name }}</span>
+      </div>
+      <div class="wy-menu wy-menu-vertical">
+        <ul id="nav-menu">
+          {% for nav_item in nav %}
+          {% if nav_item.children %}
+          <li>{{ nav_item.title }}
+            <ul>
+              {% for nav_item in nav_item.children %}
+              <li class="{% if nav_item.active %}current{% endif %}">
+                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% else %}
+          <li class="{% if nav_item.active %}current{% endif %}">
+            <span class="material-icons">
+              {% if nav_item.url == '' %}
+              home
+              {% else %}
+              description
+              {% endif %}
+            </span>
+            {% if nav_item.active %}
+            <b>{{ nav_item.title }}</b>
+            {% else %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {% endif %}
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="content-wrap">
+        <h2>External links</h2>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <span class="material-icons">inventory</span>
+            <a href="https://blog.cyclopsgroup.org">
+              Blogs before 2025
+            </a>
+          </li>
+          <li>
+            <span><img src="{{ base_url }}/images/github_logo_dark.svg" width="24" height="24" /></span>
+            <a href="https://github.com/jiaqi">
+              Github user
+            </a>
+          </li>
+          <li>
+            <span><img src="{{ base_url }}/images/linkedin_logo_dark.svg" width="24" height="24" /></span>
+            <a href="https://linkein.com/in/jiaqi">
+              LinkedIn profile
+            </a>
+          </li>
+          <li>
+            <span class="material-icons">email</span>
+            <a href="mailto:jiaqi.guo@gmail.com" title="Email me">
+              jiaqi.guo@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    {%- for script in config.extra_javascript %}
-    {{ script | script_tag }}
-    {%- endfor %}
+    <div class="wy-nav-content-wrap">
+      <div class="wy-top-toolbar">
+        <span class="material-icons clickable" id="side-panel-toggle" title="Hide/show side panel">
+          zoom_out_map
+        </span>
+        <span>Home</span>
+        <span class="material-icons">chevron_right</span>
+        <span>{{ page.title }}</span>
+      </div>
+      <div class="wy-nav-content">
+        <div class="content-wrap">
+          {{ page.content }}
+        </div>
+      </div>
+      <div class="wy-nav-footer">
+        <div class="content-wrap">
+          <p>Copyright &copy; 2026 Cloudpave, LLC. All rights reserved.</p>
+          <p>
+            By using cyclopsgroup.org, you agree to our
+            <a href="https://docs.cloudpave.com/terms_of_use">
+              Terms of Use
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- for script in config.extra_javascript %}
+  {{ script | script_tag }}
+  {%- endfor %}
 </body>
 
 </html>

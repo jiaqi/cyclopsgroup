@@ -1,3 +1,3 @@
-# Readling list
+# Reading list
 
 Work in progress...

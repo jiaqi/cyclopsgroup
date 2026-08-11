@@ -3,7 +3,7 @@ name: verify_www
 on:
   push:
     paths:
-      - "www"
+      - "www/**"
       - ".github/workflows/*_www.yml"
 
 concurrency:

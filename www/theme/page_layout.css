@@ -185,6 +185,7 @@ body {
 
     .wy-top-toolbar {
       position: fixed;
+      z-index: 900;
       width: 100%;
     }
 
@@ -194,12 +195,17 @@ body {
   }
 
   .wy-nav-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
     transform: translateX(-100%);
   }
 
   body.sidebar-toggled {
     .wy-nav-side {
-      transform: translateX(100%);
+      transform: translateX(0);
       box-shadow: 8px 0px 8px #60606060;
     }
 

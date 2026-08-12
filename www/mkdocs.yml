@@ -15,8 +15,8 @@ markdown_extensions:
   - md_in_html
 extra_css:
   - https://fonts.googleapis.com/icon?family=Material+Icons
-  - page_layout.css
-  - markdown_style.css
+  - css/page_layout.css
+  - css/markdown_styles.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.1.min.js
   - main.js

@@ -150,6 +150,10 @@ body {
       border-bottom: 4px solid;
       border-color: var(--text-color-a);
     }
+
+    h3 {
+      font-size: 30px;
+    }
   }
 
   .wy-top-toolbar {

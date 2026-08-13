@@ -15,8 +15,11 @@ markdown_extensions:
   - md_in_html
 extra_css:
   - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css
   - css/page_layout.css
   - css/markdown_styles.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.1.min.js
-  - main.js
+  - js/main.js
+  - https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js
+  - js/cookieconsent_config.js

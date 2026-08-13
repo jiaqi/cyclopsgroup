@@ -14,6 +14,29 @@
   {%- for path in config.extra_css %}
   <link href="{{ path | url }}" rel="stylesheet" />
   {%- endfor %}
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    // Set default consent states BEFORE GA loads.
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+  </script>
+  <script
+    type="text/plain"
+    data-category="analytics"
+    src="https://www.googletagmanager.com/gtag/js?id=G-RF48G5FCT5"
+  ></script>
+  <script type="text/plain" data-category="analytics">
+    gtag('js', new Date());
+    gtag('config', 'G-RF48G5FCT5');
+  </script>
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -52,6 +75,15 @@
           </li>
           {% endif %}
           {% endfor %}
+          <li>
+            <span class="material-icons">cookie</span>
+            <a href="javascript:void(0)"
+              title="View and manage cookie preferences"
+              onclick="CookieConsent.showPreferences()"
+            >
+              Cookie Preferences
+          </a>
+        </li>
         </ul>
       </div>
       <div class="content-wrap">

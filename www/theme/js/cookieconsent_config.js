@@ -14,6 +14,9 @@ learn more.`;
 
 // Run CookieConsent
 CookieConsent.run({
+  cookie: {
+    domain: '.cyclopsgroup.org'
+  },
   // Automatically clear Google Analytics cookies if consent is revoked
   categories: {
     necessary: {

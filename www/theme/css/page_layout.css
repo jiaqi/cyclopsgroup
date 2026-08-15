@@ -35,6 +35,14 @@ body {
       visibility: hidden;
     }
 
+    ul {
+      margin: 0px;
+    }
+
+    li {
+      margin: 8px 0px;
+    }
+
     img.align-left {
       float: left;
       margin-right: 24px;

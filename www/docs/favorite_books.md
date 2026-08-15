@@ -10,7 +10,7 @@ As I grew older, however, the stakes rose, experiencing and mistakes became far 
 
 I update this page from time to time to maintain a very short list of books that felt most important or meaningful to me. These book are always on my desk next to the keyboard.
 
-![Principles: Life and Work](https://covers.openlibrary.org/b/isbn/978-1501124051-M.jpg){: class=align-left}
+![Principles: Life and Work](https://covers.openlibrary.org/b/isbn/978-1501124020-M.jpg){: class=align-left}
 
 Ray Dalio's Principles: Life and Work is a blend of autobiography and self-development book. In my view, the memoir sections is more self-developing than the book's principles section. As I mentioned earlier, learning from someone's experience can be far more effective than reading conclusions.
 
@@ -43,5 +43,3 @@ Several other top picks of various categories.
 ![A Universe from Nothing](https://covers.openlibrary.org/b/isbn/978-1471112683-M.jpg)
 ![Crucial Conversations: Tools for Talking When Stakes are High](https://covers.openlibrary.org/b/isbn/978-1260474183-M.jpg)
 ![A Man for All Markets: From Las Vegas to Wall Street, How I Beat the Dealer and the Market](https://covers.openlibrary.org/b/isbn/978-0812979909-M.jpg)
-
-<br clear="both">

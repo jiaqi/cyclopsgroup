@@ -9,3 +9,13 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    version-strategy: increase
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
+

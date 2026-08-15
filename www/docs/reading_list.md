@@ -1,3 +1,0 @@
-# Reading list
-
-Work in progress...

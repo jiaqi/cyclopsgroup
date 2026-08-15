@@ -39,6 +39,11 @@ body {
       float: left;
       margin-right: 24px;
     }
+
+    img.align-right {
+      float: right;
+      margin-left: 24px;
+    }
   }
 }
 

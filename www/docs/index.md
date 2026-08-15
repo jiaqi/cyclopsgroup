@@ -6,7 +6,7 @@ I'm Jiaqi Guo, a software engineer and entrepreneur. Welcome to my digital works
 
 This website, `www.cyclopsgroup.org`, serves as a personal digital archive. It's a corner of the web where I gather random notes, articles, and projects I've worked on over the years. Approaching 50, I've realized that if these interesting moments are not written down, they will eventually slip away in time. It's not meticulously organized; think of it more like an old bookshelf filled with well-worn paperbacks and dusty notebooks.
 
-The website is built with [MKDocs](https://www.mkdocs.org) in [a public Github repository]((https://github.com/jiaqi/cyclopsgroup)) and hosted on [Github Pages](https://docs.github.com/en/pages).
+The website is built with [MKDocs](https://www.mkdocs.org) in [a public Github repository](https://github.com/jiaqi/cyclopsgroup) and hosted on [Github Pages](https://docs.github.com/en/pages).
 
 ## About me
 

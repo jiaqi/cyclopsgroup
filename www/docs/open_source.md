@@ -32,7 +32,7 @@ Jmxterm was [started around 2008](https://blog.cyclopsgroup.org/2008/07/replace-
 
 ## To contribute
 
-If y'all share a passion for these projects and want to help out, please follow the standard GitHub development flow: open an issue, submit a pull request, and let's talk through changes there. I may not be as active as I once was, but I try to catch up on outstanding PRs now and then.
+For anyone who shares a passion for these projects and want to contribute, please follow the standard GitHub development flow, submit a pull request, and we can discuss in the PR. I may not be as active as before, but I try to catch up on outstanding PRs from time to time.
 
 Each project has its development conventions, including lint rules, coding standards,  and test expectations. Most projects have CI/CD pipelines in place to help enforce these guidelines, although are not always perfect. When making changes, please make a best effort to follow the project's existing conventions and guidelines.
 

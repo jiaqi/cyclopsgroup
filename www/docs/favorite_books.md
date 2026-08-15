@@ -22,7 +22,7 @@ The book contains some of the most powerful words I've read. They are true and o
 
 ![No Rules Rules: Netflix and the Culture of Reinvention](https://covers.openlibrary.org/b/isbn/978-1984877864-M.jpg){: class=align-left}
 
-Corporate culture is a notoriously difficult and opinionated topic, and almost all companies, despite their best intentions, fail to get it right. Netflix is one of the rare exceptions. By experimenting boldly and holding people to high standards with unprecedented trust and freedom, it reinvented how modern tech companies operate. No Rules Rules by Reed Hastings and Erin Meyer thrilled me. It shows with honest and concrete examples, how freedom and radical candor can spark innovation, and how conventional mindset and small compromises too often lead to mediocrity. There are a few other similar books such as How Google Works and Amazon Unbound.
+Corporate culture is a notoriously difficult and opinionated topic, and almost all companies, despite their best intentions, fail to get it right. Netflix is one of the rare exceptions. By experimenting boldly and holding people to high standards with unprecedented trust and freedom, it reinvented how modern tech companies operate. No Rules Rules by Reed Hastings and Erin Meyer thrilled me. It shows with honest and concrete examples, how freedom and radical candor can spark innovation, and how conventional mindset and small compromises too often lead to mediocrity.
 
 <br clear="both"/>
 

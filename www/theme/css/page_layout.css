@@ -14,11 +14,7 @@
 body {
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
 
-  code {
-    font-size: 100%;
-  }
-
-  .wy-nav-content-wrap {
+  .wy-nav-content {
     table {
       margin-bottom: 48px;
     }
@@ -37,6 +33,11 @@ body {
     a.headerlink {
       margin: 0px 8px;
       visibility: hidden;
+    }
+
+    img.align-left {
+      float: left;
+      margin-right: 24px;
     }
   }
 }

@@ -1,5 +1,6 @@
 :root {
   --page-nav-width: 300px;
+  --page-conent-width: 980px;
   --page-content-size: 115%;
   --background-color-1: #D6DBD2;
   --background-color-2: #FAFAFA;
@@ -13,6 +14,27 @@
 
 body {
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  a:link,
+  a:visited {
+    color: var(--text-color-h);
+
+    .material-icons {
+      color: var(--text-color-r);
+    }
+
+    .material-icons:hover {
+      color: var(--text-color-h);
+    }
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  .clickable:hover {
+    color: var(--text-color-h);
+  }
 
   .wy-nav-content {
     table {
@@ -56,16 +78,6 @@ body {
 }
 
 @media only screen {
-
-  a:link,
-  a:visited {
-    color: var(--text-color-h);
-  }
-
-  .clickable {
-    cursor: pointer;
-  }
-
   .wy-nav-side {
     width: var(--page-nav-width);
     background-color: var(--background-color-3);
@@ -122,10 +134,6 @@ body {
     background-color: var(--background-color-2);
     transition: margin-left 0.3s ease;
 
-    .wy-top-toolbar {
-      background-color: var(--background-color-1);
-    }
-
     .wy-top-placeholder {
       height: 98px;
       display: none;
@@ -171,19 +179,37 @@ body {
   }
 
   .wy-top-toolbar {
+    background-color: var(--background-color-1);
     height: 96px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0px 24px;
     font-size: 150%;
     font-weight: 700;
     font-family: Roboto Slab, ff-tisa-web-pro, Georgia, Arial, sans-serif;
+
+    .content-wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 24px;
+      height: 100%;
+    }
+
+    .align-right {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .align-left {
+      margin-right: auto;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
   }
 
   .content-wrap, .rst-content {
     padding: 24px;
-    max-width: 980px;
+    max-width: var(--page-conent-width);
   }
 
   body.sidebar-toggled {

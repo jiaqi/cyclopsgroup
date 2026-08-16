@@ -44,7 +44,9 @@
   <div class="wy-grid-for-nav">
     <div class="wy-nav-side stick-nav">
       <div class="wy-top-toolbar">
-        <span>{{ config.site_name }}</span>
+        <div class="content-wrap">
+          <div class="align-left"><span>{{ config.site_name }}</span></div>
+        </div>
       </div>
       <div class="wy-menu wy-menu-vertical">
         <ul id="nav-menu">
@@ -121,12 +123,31 @@
     </div>
     <div class="wy-nav-content-wrap">
       <div class="wy-top-toolbar">
-        <span class="material-icons clickable" id="side-panel-toggle" title="Hide/show side panel">
-          zoom_out_map
-        </span>
-        <span>Home</span>
-        <span class="material-icons">chevron_right</span>
-        <span>{{ page.title }}</span>
+        <div class="content-wrap">
+          <div class="align-left">
+            <span class="material-icons clickable" id="side-panel-toggle" title="Hide/show side panel">
+              zoom_out_map
+            </span>
+            <span>Home</span>
+            <span class="material-icons">chevron_right</span>
+            <span>{{ page.title }}</span>
+          </div>
+          <div class="align-right">
+            {% if page.url == '' %}
+            {% set source_file = "index" %}
+            {% elif page and page.url %}
+            {% set source_file = page.url[:-1] %}
+            {% endif %}
+            <span>
+              <a href="https://github.com/jiaqi/cyclopsgroup/blob/main/www/docs/{{ source_file }}.md"
+                title="Page source code on Github">
+                <span class="material-icons">
+                  code
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
       <div class="wy-top-placeholder"></div>
       <div class="wy-nav-content">

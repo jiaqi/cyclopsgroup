@@ -181,7 +181,7 @@ body {
     font-family: Roboto Slab, ff-tisa-web-pro, Georgia, Arial, sans-serif;
   }
 
-  .content-wrap {
+  .content-wrap, .rst-content {
     padding: 24px;
     max-width: 980px;
   }

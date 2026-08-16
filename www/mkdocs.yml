@@ -1,6 +1,5 @@
 site_name: Jiaqi Guo
 site_dir: target
-logo: images/noodle_logo_48.png
 theme:
   name: readthedocs
   custom_dir: theme

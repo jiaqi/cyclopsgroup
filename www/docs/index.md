@@ -1,3 +1,7 @@
+---
+allow_discussion: false
+---
+
 # Welcome
 
 I'm Jiaqi Guo, a software engineer and entrepreneur. Welcome to my digital workshop -- a space for my personal passions outside the corporate walls.

@@ -76,7 +76,7 @@ body {
 
     img.align-right {
       float: right;
-      margin-right: 12px 0px 12px 24px;
+      margin: 12px 0px 12px 24px;
     }
   }
 }

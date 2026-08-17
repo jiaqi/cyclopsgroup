@@ -166,19 +166,19 @@ body {
     }
 
     h1 {
-      margin: 24px 0px;
-      font-size: 48px;
+      margin: 16px 0px;
+      font-size: 40px;
       font-weight: 400;
     }
 
     h2 {
-      font-size: 36px;
+      font-size: 32px;
       border-bottom: 4px solid;
       border-color: var(--text-color-a);
     }
 
     h3 {
-      font-size: 30px;
+      font-size: 24px;
     }
   }
 

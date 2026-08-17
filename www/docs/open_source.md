@@ -4,13 +4,7 @@ Before 2015, I was actively involved in several open-source projects, mostly in 
 
 ## Java projects
 
-The complete list of my open-source projects is on my [GitHub repositories](https://github.com/jiaqi?tab=repositories) page. A few of them turned out to be useful.
-
-| Project | What is it | Why it's worth mentioning |
-| -- | -- | -- |
-| [jmxterm](https://github.com/jiaqi/jmxterm) | Command line alternative to `jconsole` | Well accepted by open source community |
-| [datamung](https://github.com/jiaqi/datamung) | A web-based RDS MySQL data backup service | Won Netflix Cloud Prize award |
-| [jcli](https://github.com/jiaqi/jcli) | Declarative command line parsing library in Java | Used by `jmxterm` and some other tools |
+The complete list of my open-source projects is on my [GitHub repositories](https://github.com/jiaqi?tab=repositories) page. Among all these projects, [jmxterm](https://github.com/jiaqi/jmxterm) and [datamung](https://github.com/jiaqi/datamung) are two Java projects worth calling out.
 
 ### Datamung
 
@@ -40,8 +34,8 @@ Thank you for your interest, contributions, and support.
 
 ## Post 2015
 
-These days I'm not actively developing these open-source projects anymore, though several continue to be used and supported by volunteers in the broader community. Over time, my priorities've shifted.
+These days I'm not actively developing mentioned open-source projects anymore, though several continue to be used and supported by volunteers in the broader community. Over time, my priorities have shifted.
 
-While I'm still passionate about solving problems with software, the challenges I now focus on often require close, structured collaboration among people with diverse skills beyond programming. The solutions tend to be tightly coupled with surrounding enterprise systems. As a result, it has become challenging to create projects that is both useful and easy to maintain as an open-source. As a result, my work has shifted toward closed-source and commercial projects.
+While I'm still passionate about solving problems with software, the challenges I now focus on often require close, structured collaboration between people with diverse skills beyond programming and technology. The solutions tend to be tightly coupled with surrounding enterprise systems. As a result, it has become challenging to create projects that is both useful and easy to maintain as open-source and my work has shifted toward closed-source and commercial projects.
 
-Personal life has played a big part too. As I've gotten older, family, kids, and other interests have naturally taken priority.
+Personal life has played a big part too. As I've gotten older, family, children, and other personal interests have naturally taken priority.

@@ -39,17 +39,15 @@ body {
   .wy-nav-content {
     table {
       margin-bottom: 48px;
-    }
 
-    table td,
-    table th {
-      padding: 16px;
-    }
+      td, th {
+        padding: 16px;
+      }
 
-    table th {
-      background-color: var(--background-color-1);
-      text-align: left;
-      text-wrap: nowrap;
+      th {
+        background-color: var(--background-color-1);
+        text-align: left;
+      }
     }
 
     a.headerlink {
@@ -59,10 +57,10 @@ body {
 
     ul {
       margin: 0px;
-    }
 
-    li {
-      margin: 8px 0px;
+      li {
+        margin: 8px 0px;
+      }
     }
 
     img {
@@ -99,21 +97,23 @@ body {
 
     ul {
       list-style-type: none;
+
+      li {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        padding: 12px 24px;
+      }
+
+      li.current {
+        border-width: 0px 6px 0px 0px;
+        border-style: solid;
+        border-color: var(--text-color-h);
+        background-color: transparent;
+      }
     }
 
-    li {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      padding: 12px 24px;
-    }
 
-    li.current {
-      border-width: 0px 6px 0px 0px;
-      border-style: solid;
-      border-color: var(--text-color-h);
-      background-color: transparent;
-    }
 
     a:link,
     a:visited {
@@ -265,7 +265,6 @@ body {
 }
 
 @media only print {
-
   .wy-top-toolbar,
   .wy-nav-footer,
   .wy-nav-side {

@@ -10,7 +10,7 @@ As I grew older, however, the stakes rose, experiencing and mistakes became far 
 
 I update this page from time to time to maintain a very short list of books that felt most important or meaningful to me. These book are always on my desk next to the keyboard.
 
-![Principles: Life and Work](https://covers.openlibrary.org/b/isbn/978-1501124020-M.jpg){: class=align-left}
+![Principles: Life and Work](https://m.media-amazon.com/images/I/41Dn20bdaAL._SL500_.jpg){: class=align-left width=180}
 
 Ray Dalio's Principles: Life and Work is a blend of autobiography and self-development book. In my view, the memoir sections is more self-developing than the book's principles section. As I mentioned earlier, learning from someone's experience can be far more effective than reading conclusions.
 
@@ -20,13 +20,13 @@ The book contains some of the most powerful words I've read. They are true and o
 
 > I spoke frankly, and I expected those around me to speak frankly. I fought for what I thought was best, and I wanted them to do so as well. When I thought someone did something stupid, I said so and I expected them to tell me when I did something stupid. Each of us would be better for it. To me, that was what strong and productive relationships looked like. Operating any other way would be unproductive and unethical.
 
-![No Rules Rules: Netflix and the Culture of Reinvention](https://covers.openlibrary.org/b/isbn/978-1984877864-M.jpg){: class=align-left}
+![No Rules Rules: Netflix and the Culture of Reinvention](https://m.media-amazon.com/images/I/41DssjENayL._SL500_.jpg){: class=align-left width=180}
 
 Corporate culture is a notoriously difficult and opinionated topic, and almost all companies, despite their best intentions, fail to get it right. Netflix is one of the rare exceptions. By experimenting boldly and holding people to high standards with unprecedented trust and freedom, it reinvented how modern tech companies operate. No Rules Rules by Reed Hastings and Erin Meyer thrilled me. It shows with honest and concrete examples, how freedom and radical candor can spark innovation, and how conventional mindset and small compromises too often lead to mediocrity.
 
 <br clear="both"/>
 
-![Clean Architecture: A Craftsman's Guide to Software Structure and Design](https://covers.openlibrary.org/b/isbn/978-0134494166-M.jpg){: class=align-right}
+![Clean Architecture: A Craftsman's Guide to Software Structure and Design](https://m.media-amazon.com/images/I/41fijVG5x7L._SL500_.jpg){: class=align-right width=240}
 
 In my opinion, Robert C. Martin's Clean Architecture is the book every software engineer must read before making any design decision for commercial systems. Its principles are the foundation for creating maintainable and predictable software. It would be irresponsible to expect colleagues to work effectively with systems designed without this knowledge. Yet, engineers across many companies struggle daily with problems that Clearn Architecture directly addresses.
 
@@ -38,8 +38,11 @@ Even on fundamental topics, such as functionality versus maintainability, or wha
 
 Several other top picks of various categories.
 
-![The Psychology of Money: Timeless lessons on wealth, greed, and happiness](https://covers.openlibrary.org/b/isbn/978-0857197689-M.jpg)
-![The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution](https://covers.openlibrary.org/b/isbn/978-0241981344-M.jpg)
-![A Universe from Nothing](https://covers.openlibrary.org/b/isbn/978-1471112683-M.jpg)
-![Crucial Conversations: Tools for Talking When Stakes are High](https://covers.openlibrary.org/b/isbn/978-1260474183-M.jpg)
-![A Man for All Markets: From Las Vegas to Wall Street, How I Beat the Dealer and the Market](https://covers.openlibrary.org/b/isbn/978-0812979909-M.jpg)
+![The Psychology of Money: Timeless lessons on wealth, greed, and happiness](https://m.media-amazon.com/images/I/41bx4Tm0p2L._SL500_.jpg){: width=180}
+![The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution](https://m.media-amazon.com/images/I/51sPQr5E92L._SL500_.jpg){: width=180}
+![A Universe from Nothing](https://m.media-amazon.com/images/I/41+0bpkl2+L._SL500_.jpg){: width=180}
+![Crucial Conversations: Tools for Talking When Stakes are High](https://m.media-amazon.com/images/I/41pCPwfC0JL._SL500_.jpg){: width=180}
+![A Man for All Markets: From Las Vegas to Wall Street, How I Beat the Dealer and the Market](https://m.media-amazon.com/images/I/41AuQqySy8L._SL500_.jpg){: width=180}
+![The Lean Startup](https://m.media-amazon.com/images/I/41BPLKaHmTL._SL500_.jpg){: width=180}
+
+

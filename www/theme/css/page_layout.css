@@ -65,14 +65,18 @@ body {
       margin: 8px 0px;
     }
 
+    img {
+      margin: 12px 24px 12px 0px;
+      border: solid 1px var(--text-color-a);
+    }
+
     img.align-left {
       float: left;
-      margin-right: 24px;
     }
 
     img.align-right {
       float: right;
-      margin-left: 24px;
+      margin-right: 12px 0px 12px 24px;
     }
   }
 }
@@ -207,7 +211,8 @@ body {
     }
   }
 
-  .content-wrap, .rst-content {
+  .content-wrap,
+  .rst-content {
     padding: 24px;
     max-width: var(--page-conent-width);
   }

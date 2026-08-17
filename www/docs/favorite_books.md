@@ -42,7 +42,5 @@ Several other top picks of various categories.
 ![The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution](https://m.media-amazon.com/images/I/51sPQr5E92L._SL500_.jpg){: width=180}
 ![A Universe from Nothing](https://m.media-amazon.com/images/I/41+0bpkl2+L._SL500_.jpg){: width=180}
 ![Crucial Conversations: Tools for Talking When Stakes are High](https://m.media-amazon.com/images/I/41pCPwfC0JL._SL500_.jpg){: width=180}
+![Algorithmic Trading: Winning Strategies and Their Rationale](https://m.media-amazon.com/images/I/51Gz0YhZyjL._SL500_.jpg){: width=180}
 ![A Man for All Markets: From Las Vegas to Wall Street, How I Beat the Dealer and the Market](https://m.media-amazon.com/images/I/41AuQqySy8L._SL500_.jpg){: width=180}
-![The Lean Startup](https://m.media-amazon.com/images/I/41BPLKaHmTL._SL500_.jpg){: width=180}
-
-

@@ -2,17 +2,17 @@
 
 ## Power of reading
 
-Reading and writing were never my strengths. Whether I was learning life lessons or a particular skill, I learned best by doing. For a long time, experience taught me more than books, and Oscar Wilde's line "Nothing worth knowing can be taught" felt true: mistakes were my clearest teachers.
+Reading and writing were never my strengths. Whether it's about life lessons or a particular skill, I learned best by doing. For a long time, experience taught me more than books, and Oscar Wilde's line "Nothing worth knowing can be taught" felt true: mistakes were my clearest teachers.
 
-As I grew older, however, the stakes rose, experiencing and mistakes became far more costly. Early in my career I discovered that reading other people's experiences could act like a cheat code: by empathizing with their stories, I could experience the same and learn the same lessons without paying the same price. I began reading more, and surprisingly, I enjoyed it.
+As I grew older, however, the stakes rose, experiencing and mistakes became far more costly. Early in my career I realized that reading other people's experiences could act like a cheat code: by empathizing with their stories, I could experience the same and learn the same lessons without paying the same price. I began reading more, and surprisingly, it felt enjoyable.
 
 ## Books on the desk
 
-I update this page from time to time to maintain a very short list of books that felt most important or meaningful to me. These book are always on my desk next to the keyboard.
+This page is updated from time to time to keep a very short list of books that felt most important or meaningful to me. These book are always on my desk next to the keyboard.
 
 ![Principles: Life and Work](https://m.media-amazon.com/images/I/41Dn20bdaAL._SL500_.jpg){: class=align-left width=180}
 
-Ray Dalio's Principles: Life and Work is a blend of autobiography and self-development book. In my view, the memoir sections is more self-developing than the book's principles section. As I mentioned earlier, learning from someone's experience can be far more effective than reading conclusions.
+Ray Dalio's Principles: Life and Work is a blend of autobiography and self-development book. In my view, the memoir sections is more self-developing than the book's principles section. As mentioned earlier, learning from someone's experience can be far more effective than reading conclusions.
 
 The book contains some of the most powerful words I've read. They are true and often difficult to accept in reality. For example, this passage in particular deeply resonates with me.
 

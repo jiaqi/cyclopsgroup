@@ -20,7 +20,7 @@ Ironically, not long after, AWS released its own cross-region RDS backup solutio
 
 [https://github.com/jiaqi/jmxterm](https://github.com/jiaqi/jmxterm)
 
-The most popular project in my list has to be Jmxterm. It is a command line alternative to `jconsole` for Java. It aims to provide as much of `jconsole`'s functionality as possible in a non-graphical environment, including some features not officially exposed by the public JDK APIs. At the same time, it offers a rich interactive terminal experience that goes beyond what a typical Java library can do. It's one of the projects where I need it for work, couldn't find it, so I built it.
+The most popular project in my list has to be Jmxterm. It is a command line alternative to `jconsole` for Java. It aims to provide as much of `jconsole`'s functionality as possible in a non-graphical environment, including some features not officially exposed by the public JDK APIs. At the same time, it offers a rich interactive terminal experience that goes beyond what a typical Java library can do.
 
 Jmxterm was [started around 2008](https://blog.cyclopsgroup.org/2008/07/replace-jconsole-with-command-line.html). Today it is in a maintenance mode because `jconsole` has not evolved in a long time. Some still consider it the best choice for headless access to Java MBeans. It's cited in several resources, including [53 Java libraries](https://emmanuelbernard.com/blog/2021/03/16/53-java-libraries/), operation guides in [Atlassian](https://support.atlassian.com/confluence/kb/how-to-get-jmx-data-from-confluence-using-jmxterm/) and [Cisco](https://www.cisco.com/c/en/us/td/docs/wireless/quantum-policy-suite/R23-2-0/vDRA-OperationsGuide/cps23-2-0vdraoperationsguide.pdf), and a few books.
 

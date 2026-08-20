@@ -8,7 +8,7 @@ As I grew older, however, the stakes rose, experiencing and mistakes became far 
 
 ## Books on the desk
 
-This page is updated from time to time to keep a very short list of books that felt most important or meaningful to me. These book are always on my desk next to the keyboard.
+This page is updated from time to time to keep a very short list of books that felt most important and meaningful to me. These book are always on my desk next to the keyboard.
 
 ![Principles: Life and Work](https://m.media-amazon.com/images/I/41Dn20bdaAL._SL500_.jpg){: class=align-left width=180}
 

@@ -1,6 +1,6 @@
 # Open source
 
-Before 2015, I was actively involved in several open-source projects, mostly in Java. Back then, if I saw somethin' missin' in the community, I'd just go ahead and build it as an open-source project.
+Before 2015, I was actively involved in several open-source projects, mostly in Java. Back then, if I saw something missing in the community, I'd just go ahead and build it as an open-source project.
 
 ## Java projects
 

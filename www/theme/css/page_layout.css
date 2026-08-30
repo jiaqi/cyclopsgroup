@@ -77,6 +77,17 @@ body {
       margin: 12px 0px 12px 24px;
     }
   }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      padding: 12px 24px;
+    }
+  }
 }
 
 @media only screen {
@@ -112,8 +123,6 @@ body {
         background-color: transparent;
       }
     }
-
-
 
     a:link,
     a:visited {
@@ -155,6 +164,8 @@ body {
 
     .wy-nav-footer {
       color: var(--background-color-3);
+      display: flex;
+      justify-content: space-between;
     }
 
     h1:hover,
@@ -195,26 +206,26 @@ body {
       padding: 0px 24px;
       height: 100%;
     }
-
-    .align-right {
-      margin-left: auto;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .align-left {
-      margin-right: auto;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
   }
 
   .content-wrap,
   .rst-content {
     padding: 24px;
     max-width: var(--page-conent-width);
+  }
+
+  div.align-left, div.align-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  div.align-right {
+    margin-left: auto;
+  }
+
+  div.align-left {
+    margin-right: auto;
   }
 
   body.sidebar-toggled {

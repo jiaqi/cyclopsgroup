@@ -78,15 +78,6 @@
           </li>
           {% endif %}
           {% endfor %}
-          <li>
-            <span class="material-icons">cookie</span>
-            <a href="javascript:void(0)"
-              title="View and manage cookie preferences"
-              onclick="CookieConsent.showPreferences()"
-            >
-              Cookie Preferences
-          </a>
-        </li>
         </ul>
       </div>
       <div class="content-wrap">
@@ -110,12 +101,6 @@
             <span><img src="{{ base_url }}/images/linkedin_logo_dark.svg" width="24" height="24" /></span>
             <a href="https://linkein.com/in/jiaqi">
               LinkedIn profile
-            </a>
-          </li>
-          <li>
-            <span class="material-icons">email</span>
-            <a href="mailto:jiaqi.guo@gmail.com" title="Email me">
-              jiaqi.guo@gmail.com
             </a>
           </li>
         </ul>
@@ -190,15 +175,36 @@
         </div>
       </div>
       {% endif %}
-      <div class="wy-nav-footer">
-        <div class="content-wrap">
-          <p>Copyright &copy; 2026 Cloudpave, LLC. All rights reserved.</p>
-          <p>
-            By using cyclopsgroup.org, you agree to our
-            <a href="https://docs.cloudpave.com/terms_of_use">
-              Terms of Use
-            </a>.
-          </p>
+      <div class="wy-nav-footer content-wrap">
+        <div class="align-left">
+          <div>
+            <p>Copyright &copy; 2026 Cloudpave, LLC. All rights reserved.</p>
+            <p>
+              By using cyclopsgroup.org, you agree to our
+              <a href="https://docs.cloudpave.com/terms_of_use">
+                Terms of Use
+              </a>.
+            </p>
+          </div>
+        </div>
+        <div class="align-right">
+          <ul>
+            <li>
+              <span class="material-icons">email</span>
+              <a href="mailto:jiaqi.guo@gmail.com" title="Email me">
+                jiaqi.guo@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="material-icons">cookie</span>
+              <a href="javascript:void(0)"
+                title="View and manage cookie preferences"
+                onclick="CookieConsent.showPreferences()"
+              >
+                Cookie Preferences
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

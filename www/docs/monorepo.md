@@ -11,6 +11,27 @@ If you wonder how this unpopular concept fits enterprise software ecosystems, th
 
 One project, one repository. Each project is written in a programming language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Whoever likes it chooses a version to use and when to upgrade. Versions provide reliable reference points between projects, allowing providers to evolve their code while consumers accept changes at their own pace. For many developers, this is simply how software development works.
 
+```
+cool_project/
+├── .github/                  # CI/CD workflows (e.g., GitHub Actions)
+│   ├── dependabot.yml        # Dependabot configuration
+│   └── workflows/            # Github actions
+│       └── run_tests.yml     # Github action to run tests
+├── .venv/                    # Local virtual environment (never commit!)
+├── docs/                     # Project documentation
+├── src/                      # Source directory root
+│   └── cool_library/           # Main package (uses snake_case)
+│       ├── __init__.py       # Marks directory as an importable package
+│       └── __main__.py       # Code execution entry point via `python -m`
+├── tests/                    # Test suite (mirrors the src/ layout)
+│   └── test_core.py          # Individual module tests
+├── .env.example              # Template for environment variables
+├── .gitignore                # Specified files ignored by Git
+├── LICENSE                   # Legal distribution terms
+├── README.md                 # Project overview and quickstart instructions
+└── pyproject.toml            # Unified tool configs, dependencies, and metadata
+```
+
 The model feels natural because we encounter it throughout open source where contributors are lone-wolves spread across the world. Package managers teach us to consume software as independently versioned packages, while repository platforms make each project a self-contained workspace.
 
 The repo-per-project model assumes a degree of independence between projects worth questioning. In an enterprise, coordination often extends across project boundaries. A shared library and its consuming services

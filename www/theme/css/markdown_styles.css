@@ -21,13 +21,11 @@
   }
 
   pre {
-    color: #282939;
-    padding: 14px;
     overflow-x: auto;
 
     code {
       border-style: none;
-      padding: 0px;
+      padding: 8px 16px;
       font-size: 1.2em;
     }
   }

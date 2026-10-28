@@ -7,13 +7,11 @@ The concept of a monorepo may sound counter-intuitive in the open-source world. 
 If you wonder how this unpopular concept fits enterprise software ecosystems, this article explores how it changes releases, CI, and cross-project development, and why Bazel is a compelling build system for monorepo to work.
 
 
-## Repo per project, why?
+## Repo per project and enterprise software
 
 One project, one repository. Each project is written in a programming language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Whoever likes it chooses a version to use and when to upgrade. Versions provide reliable reference points between projects, allowing providers to evolve their code while consumers accept changes at their own pace. For many developers, this is simply how software development works.
 
 The model feels natural because we encounter it throughout open source where contributors are lone-wolves spread across the world. Package managers teach us to consume software as independently versioned packages, while repository platforms make each project a self-contained workspace.
-
-## Enterprise software
 
 The repo-per-project model assumes a degree of independence between projects worth questioning. In an enterprise, coordination often extends across project boundaries. A shared library and its consuming services
 may belong to different teams, yet those teams operate closely within the same organization. They can negotiate priorities, agree on migration schedules, and validate changes together, forming a connected ecosystem serving shared business goals. Typically the project owner is responsible for all necessary work, including the work in consumer projects, to support a release.

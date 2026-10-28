@@ -16,13 +16,13 @@
   }
 
   li {
-    list-style-type: disc;
+    list-style-type: dist;
     margin-bottom: 4px;
   }
 
   pre {
-    background-color: #282939;
-    color: #f8f8f2;
+    color: #282939;
+    background-color: #f8f8f2;
     padding: 14px;
     border-radius: 6px;
     overflow-x: auto;
@@ -56,30 +56,9 @@
       visibility: visible;
     }
   }
+}
 
-  /* --- Code Highlight Syntax Tokens (Pygments) --- */
-  .codehilite .k {
-    color: #ff79c6;
-    font-weight: bold;
-  }
-
-  /* Keyword */
-  .codehilite .s2,
-  .codehilite .s1 {
-    color: #f1fa8c;
-  }
-
-  /* String */
-  .codehilite .nf {
-    color: #50fa7b;
-  }
-
-  /* Function name */
-  .codehilite .cm,
-  .codehilite .c1 {
-    color: #6272a4;
-    font-style: italic;
-  }
-
-  /* Comment */
+.mermaid {
+  text-align: center;
+  margin: 1.5em 0;
 }

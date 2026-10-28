@@ -40,7 +40,8 @@ body {
     table {
       margin-bottom: 48px;
 
-      td, th {
+      td,
+      th {
         padding: 16px;
       }
 
@@ -55,14 +56,6 @@ body {
       visibility: hidden;
     }
 
-    ul {
-      margin: 0px;
-
-      li {
-        margin: 8px 0px;
-      }
-    }
-
     img {
       margin: 12px 24px 12px 0px;
       border: solid 1px var(--text-color-a);
@@ -75,17 +68,6 @@ body {
     img.align-right {
       float: right;
       margin: 12px 0px 12px 24px;
-    }
-  }
-
-  ul {
-    list-style-type: none;
-
-    li {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      padding: 12px 24px;
     }
   }
 }
@@ -214,7 +196,8 @@ body {
     max-width: var(--page-conent-width);
   }
 
-  div.align-left, div.align-right {
+  div.align-left,
+  div.align-right {
     display: flex;
     gap: 8px;
     align-items: center;
@@ -276,6 +259,7 @@ body {
 }
 
 @media only print {
+
   .wy-top-toolbar,
   .wy-nav-footer,
   .wy-nav-side {

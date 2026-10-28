@@ -5,13 +5,19 @@ theme:
   custom_dir: theme
 markdown_extensions:
   - tables
-  - fenced_code
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
   - codehilite:
       linenums: true
   - toc:
       permalink: true
   - attr_list
   - md_in_html
+plugins:
+  - mermaid2
 extra_css:
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css

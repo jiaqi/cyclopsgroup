@@ -9,7 +9,7 @@ If you wonder how the monorepo concept fits enterprise software ecosystems, this
 
 ## Repo-per-project and enterprise software
 
-One project, one repository. Each project is written in a programming language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Consumers choose which version to use and when to upgrade. Versions provide reliable reference points between projects, allowing providers to evolve their code while consumers accept changes at their own pace. For many developers, this is simply how software development works.
+One project, one repository. Each project is written in a programming language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Consumers choose which version to use and when to upgrade. For many developers, this is simply how software development works.
 
 ```
 cool_project/
@@ -68,6 +68,7 @@ graph LR
   provider --> version2
   provider --> version3
   provider --> version4
+  provider --> version5
   version3 --> consumer1
   version3 --> consumer2
   version3 --> consumer3
@@ -77,9 +78,9 @@ graph LR
 
 Artifact versioning works as a wall between provider and consumer and provides them isolation and freedom to work independently. At any given time, numerous versions co-exist to serve various consumers. With modern artifact registry platforms, versions are generally immutable. A consumer can use an old version for years while the provider releases many new versions.
 
-In an organization, artifact versioning becomes far less meaningful, and so does packaging and releasing a shared library in the first place. If a change is intended to improve several internal services, its value depends on those services adopting it. The provider's responsibility can therefore extend through the entire release cycle: implementation, consumer migration, integration testing, and safe rollout. The owner of the library works with the consumer teams closely to carry out the entire release process. In practice, internal services are usually deployed through continuous delivery: each service is built from the latest source and released frequently, often several times a day. A library change then reaches production through its consumers' next routine deployment rather than through a release of its own. A packaged library is merely a handoff format between a provider and consumers who build separately; when consumers build directly from the library's source, there is nothing to hand off, and building, publishing, and hosting library packages becomes overhead. Deployable services are still built into artifacts such as binaries or container images, but shared libraries no longer need a release process of their own.
+In an organization, that wall protects little. Since the provider owns adoption, a change is not done until its consumers have taken it, so artifact versioning becomes far less meaningful, and so does packaging and releasing a shared library in the first place. In practice, internal services are usually deployed through continuous delivery: each service is built from the latest source and released frequently, often several times a day. A library change then reaches production through its consumers' next routine deployment rather than through a release of its own. A packaged library is merely a handoff format between a provider and consumers who build separately; when consumers build directly from the library's source, there is nothing to hand off, and building, publishing, and hosting library packages becomes overhead. Deployable services are still built into artifacts such as binaries or container images, but shared libraries no longer need a release process of their own.
 
-A monorepo completely embraces the idea of broader responsibility and abandons internal library versioning, along with packaging and releasing internal libraries. It allows a library and its consumers to change together, eliminating the need to package and publish a new version for consumers to accept a change. The integrated changes can be built and checked together, committed together, and in some cases released together. With all code visible in one place, teams can also find and reuse each other's work instead of rebuilding it.
+A monorepo completely embraces the idea of broader responsibility and abandons internal library versioning, along with packaging and releasing internal libraries. Consumers no longer wait for a provider to package and publish a new version before they can accept a change.
 
 Without packages or published versions, every consumer depends on the library's current source:
 
@@ -118,9 +119,9 @@ The same principle extends to third-party code. Each external package, such as `
 
 ## Cross-project changes
 
-Consider a shared library whose API needs to change, along with several consumers that use it. In the repo-per-project model, this becomes a sequence of coordinated changes. The library owner introduces the new API, preserves the old one, and publishes a release. Application owners then update their dependencies and migrate their code. Once every consumer has migrated, the library owner can remove the old API and publish another release. A single conceptual change becomes multiple pull requests, releases, and handoffs. Chances are some consumers never bother to migrate and continue to depend on the version before the change. Now both old and new versions of the project must co-exist for a long time.
+Consider a shared library whose API needs to change, along with several consumers that use it. In the repo-per-project model, this becomes a sequence of coordinated changes. The library owner introduces the new API, preserves the old one, and publishes a release. Application owners then update their dependencies and migrate their code. Once every consumer has migrated, the library owner can remove the old API and publish another release. A single conceptual change becomes multiple pull requests, releases, and handoffs, and any consumer that never migrates keeps the old version alive.
 
-In a monorepo, the library and its consumers can be updated in one change where practical. The developer modifies the API, updates its callers, and runs the relevant tests across affected projects. Each part of the change still requires proper review and approval, but after that, one commit can record a consistent source state for all involved parties. For internal dependencies, there is no need to publish an intermediate package merely to make the updated API available to consumers.
+In a monorepo, the library and its consumers can be updated in one change where practical. The developer modifies the API, updates its callers, and runs the relevant tests across affected projects. Each part of the change still requires proper review and approval, but after that, one commit can record a consistent source state for all involved parties. For internal dependencies, there is no need to publish an intermediate package merely to make the updated API available to consumers. With all code visible in one place, teams can also find and reuse each other's work instead of rebuilding it.
 
 Note that an atomic source change does not guarantee an atomic deployment. A monorepo is not a monolith: services in it are still built, deployed, and scaled independently. Services that communicate over a network may still require compatible interfaces and staged rollouts, and large migrations may span many commits. The advantage is that related source changes can be developed, reviewed, and validated together, reducing the intermediate states teams must manage.
 
@@ -147,7 +148,7 @@ In addition, separate pipelines create gaps in validation. Tests of a library ma
 
 A monorepo allows shared CI infrastructure to validate related projects against the same source revision. Toolchains and policies can be maintained centrally, while affected consumers can be tested before a change merges. As the repository grows, running every build and test becomes impractical, so monorepo tools provide dependency-aware build systems to identify affected code, reuse fine-grained cached results, and execute work in parallel. For example, with Bazel, `bazel query 'rdeps(//..., //cool_org/internal_cool_lib)'` lists every target that transitively depends on a library, so CI builds and tests only those. The organization’s investment shifts from maintaining many pipelines to improving shared infrastructure.
 
-A build in a repository with ~500k configured targets: 1,102 actions were reused from cache, and only one actually ran. Most of the elapsed time went to analysis, which a warm Bazel server skips.
+A small build in a repository with ~500k configured targets: 1,102 actions were reused from cache, and only one actually ran. Most of the elapsed time went to analysis, which a warm Bazel server skips.
 
 ```
 ======================================================================

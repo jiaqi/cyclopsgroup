@@ -36,7 +36,7 @@ The model feels natural because we encounter it throughout open source, where co
 
 The repo-per-project model assumes a degree of independence between projects worth questioning. In an enterprise, coordination often extends across project boundaries. A shared library and its consuming services may belong to different teams, yet those teams operate closely within the same organization. They can negotiate priorities, agree on migration schedules, and validate changes together, forming a connected ecosystem serving shared business goals. The project owner is often responsible for all necessary work, including the work in consumer projects, to support a release.
 
-As a result, the importance of providing a high degree of independence to project owners becomes less pronounced in an enterprise. Repository boundaries matter less, responsibility for a project's full lifecycle falls on its owner, and the need for strict versioning diminishes in favor of continuous delivery.
+As a result, the importance of providing a high degree of independence to project owners becomes less pronounced in an enterprise. Repository boundaries matter less, responsibility for a project's full lifecycle falls on its owner, and the need to package, version, and release shared libraries diminishes once changes flow continuously from source to production.
 
 ## The hurdle of release
 
@@ -77,9 +77,28 @@ graph LR
 
 Artifact versioning works as a wall between provider and consumer and provides them isolation and freedom to work independently. At any given time, numerous versions co-exist to serve various consumers. With modern artifact registry platforms, versions are generally immutable. A consumer can use an old version for years while the provider releases many new versions.
 
-In an organization, artifact versioning becomes far less meaningful. If a change is intended to improve several internal services, its value depends on those services adopting it. The provider's responsibility can therefore extend through the entire release cycle: implementation, consumer migration, integration testing, and safe rollout. The owner of the library works with the consumer teams closely to carry out the entire release process. A version becomes an ephemeral concept that only exists during the rollout. Most of the time there are only a few versions in the organization, the latest and potentially several recent ones in case of rollbacks.
+In an organization, artifact versioning becomes far less meaningful, and so does packaging and releasing a shared library in the first place. If a change is intended to improve several internal services, its value depends on those services adopting it. The provider's responsibility can therefore extend through the entire release cycle: implementation, consumer migration, integration testing, and safe rollout. The owner of the library works with the consumer teams closely to carry out the entire release process. In practice, internal services are usually deployed through continuous delivery: each service is built from the latest source and released frequently, often several times a day. A library change then reaches production through its consumers' next routine deployment rather than through a release of its own. A packaged library is merely a handoff format between a provider and consumers who build separately; when consumers build directly from the library's source, there is nothing to hand off, and building, publishing, and hosting library packages becomes overhead. Deployable services are still built into artifacts such as binaries or container images, but shared libraries no longer need a release process of their own.
 
-A monorepo completely embraces the idea of broader responsibility and abandons the concept of internal library versioning. It allows a library and its consumers to change together, eliminating the need to publish a new version for consumers to accept a change. The integrated changes can be built and checked together, committed together, and in some cases released together. With all code visible in one place, teams can also find and reuse each other's work instead of rebuilding it.
+A monorepo completely embraces the idea of broader responsibility and abandons internal library versioning, along with packaging and releasing internal libraries. It allows a library and its consumers to change together, eliminating the need to package and publish a new version for consumers to accept a change. The integrated changes can be built and checked together, committed together, and in some cases released together. With all code visible in one place, teams can also find and reuse each other's work instead of rebuilding it.
+
+Without packages or published versions, every consumer depends on the library's current source:
+
+```mermaid
+graph LR
+  subgraph Provider
+    provider["provider @ HEAD"]
+  end
+
+  subgraph Consumers
+    consumer1
+    consumer2
+    consumer3
+  end
+
+  provider --> consumer1
+  provider --> consumer2
+  provider --> consumer3
+```
 
 A consumer declares its dependencies by source path, not by version:
 
@@ -96,13 +115,6 @@ py_library(
 ```
 
 The same principle extends to third-party code. Each external package, such as `numpy`, is vendored or pinned once for the whole repository, so every project builds against the same version. This "one-version rule" eliminates diamond-dependency conflicts, where two libraries require incompatible versions of a shared dependency. The cost is that upgrading a third-party package means upgrading it for everyone at once, which is exactly the provider-owns-adoption model described above.
-
-```mermaid
-graph LR
-  provider --> consumer1
-  provider --> consumer2
-  provider --> consumer3
-```
 
 ## Cross-project changes
 
@@ -165,7 +177,7 @@ company_monorepo/
 ├── .github/workflows/        # One shared CI pipeline for every project
 ├── .bazelrc                  # Shared build flags and remote cache settings
 ├── .bazelversion             # Pins one Bazel version for everyone
-├── MODULE.bazel              # Repository-wide external dependencies
+├── MODULE.bazel              # Bazel rules and toolchain dependencies
 ├── cool_org/
 │   ├── internal_cool_lib/    # Shared library
 │   │   ├── BUILD.bazel       # Targets, dependencies, and visibility
@@ -196,6 +208,6 @@ These costs are front-loaded, while the benefits compound as the number of inter
 
 ## Summary
 
-Open source values project independence: separate repositories and immutable dependency versions let maintainers and consumers evolve on their own schedules. Enterprises have more integrated software and teams, making independent releases and per-library versioning less essential. Many keep the repo-per-project model anyway, sometimes for good reasons such as access control or tooling cost, and sometimes simply because it is the default.
+Open source values project independence: separate repositories and immutable dependency versions let maintainers and consumers evolve on their own schedules. Enterprises have more integrated software and teams, making it less essential to package, version, and release each shared library independently. Many keep the repo-per-project model anyway, sometimes for good reasons such as access control or tooling cost, and sometimes simply because it is the default.
 
 For closely connected enterprise projects, a monorepo better supports coordinated changes, shared CI, and provider ownership through consumer adoption—an approach proven at major technology companies. Bazel’s mature rules ecosystem and scalable build infrastructure make it a strong choice for large polyglot repositories, provided the organization is willing to invest in that infrastructure.

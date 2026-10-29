@@ -140,8 +140,12 @@ body {
       padding: 0px;
       max-width: unset;
 
-      p {
+      p, pre>code {
         font-size: var(--page-content-size);
+      }
+
+      p>code {
+        font-size: 100%;
       }
     }
 

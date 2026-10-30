@@ -1,15 +1,15 @@
 # Monorepo and Bazel
 
-Monorepo ([wikipedia:Monorepo](https://en.wikipedia.org/wiki/Monorepo)) is the idea of a single version-controlled repository that contains the source code for all projects across an entire organization, regardless of how they are written, built, owned, or released. Bazel ([bazel.build](https://bazel.build)) is a monorepo-friendly, polyglot build system with hermetic builds, open-sourced from Blaze, Google's internal build tool.
+A monorepo ([wikipedia:Monorepo](https://en.wikipedia.org/wiki/Monorepo)) is a single version-controlled repository that contains the source code for all projects across an entire organization, regardless of how they are written, built, owned, or released. Bazel ([bazel.build](https://bazel.build)) is a monorepo-friendly, polyglot build system with hermetic builds, open-sourced from Blaze, Google's internal build tool.
 
-The concept of a monorepo may sound counter-intuitive in the open-source world. However, in reality it works well at many tech companies, large and small. The most famous example is Google, which has been vocal about it for years, while other companies such as Meta, Microsoft (for Windows), Uber, and Twitter have long practiced it, some since day one, others since long before Git existed.
+The concept of a monorepo may sound counterintuitive in the open-source world. In practice, it works well at many tech companies, large and small. The most famous example is Google, which has been vocal about it for years, while other companies such as Meta, Microsoft (for Windows), Uber, and Twitter have long practiced it, some since day one, others since long before Git existed.
 
 If you wonder how the monorepo concept fits enterprise software ecosystems, this article explores how it changes releases, CI, and cross-project development, what it costs, and why Bazel is a compelling build system for making a monorepo work.
 
 
 ## Repo-per-project and enterprise software
 
-One project, one repository. Each project is written in a programming language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Consumers choose which version to use and when to upgrade. For many developers, this is simply how software development works.
+One project, one repository. Each project is written in one language, organized by a build system, declares its dependencies, maintains its CI pipeline, and publishes its own releases. Consumers choose which version to use and when to upgrade. For many developers, this is simply how software development works.
 
 ```
 cool_project/
@@ -34,11 +34,11 @@ cool_project/
 
 The model feels natural because we encounter it throughout open source, where contributors are often spread across the world and loosely coordinated. Package managers teach us to consume software as independently versioned packages, while repository platforms make each project a self-contained workspace. Even so, some large open-source projects, such as LLVM, have consolidated into a monorepo.
 
-The repo-per-project model assumes a degree of independence between projects worth questioning. In an enterprise, coordination often extends across project boundaries. A shared library and its consuming services may belong to different teams, yet those teams operate closely within the same organization. They can negotiate priorities, agree on migration schedules, and validate changes together, forming a connected ecosystem serving shared business goals. The project owner is often responsible for all necessary work, including the work in consumer projects, to support a release.
+The repo-per-project model assumes a degree of independence between projects that is worth questioning. In an enterprise, coordination often extends across project boundaries. A shared library and its consuming services may belong to different teams, yet those teams operate closely within the same organization. They can negotiate priorities, agree on migration schedules, and validate changes together, forming a connected ecosystem serving shared business goals. The project owner is often responsible for all necessary work, including the work in consumer projects, to support a release.
 
-As a result, the importance of providing a high degree of independence to project owners becomes less pronounced in an enterprise. Repository boundaries matter less, responsibility for a project's full lifecycle falls on its owner, and the need to package, version, and release shared libraries diminishes once changes flow continuously from source to production.
+As a result, project owners in an enterprise need less independence. Repository boundaries matter less, responsibility for a project's full lifecycle falls on its owner, and the need to package, version, and release shared libraries diminishes once changes flow continuously from source to production.
 
-## The hurdle of release
+## The release hurdle
 
 In the repo-per-project model, the release process typically involves a library owner implementing a change, testing it, assigning a version, and publishing a package. Consumers then decide when to adopt it, resolve incompatibilities, and validate their applications. The owner delivers a release; the consumer manages its adoption. Versions make this separation practical by allowing different consumers to depend on different states of the library.
 
@@ -76,9 +76,13 @@ graph LR
   version4 --> consumer5
 ```
 
-Artifact versioning works as a wall between provider and consumer and provides them isolation and freedom to work independently. At any given time, numerous versions co-exist to serve various consumers. With modern artifact registry platforms, versions are generally immutable. A consumer can use an old version for years while the provider releases many new versions.
+Artifact versioning acts as a wall between provider and consumer that gives them isolation and freedom to work independently. At any given time, numerous versions coexist to serve various consumers. With modern artifact registry platforms, versions are generally immutable. A consumer can use an old version for years while the provider releases many new versions.
 
-In an organization, that wall protects little. Since the provider owns adoption, a change is not done until its consumers have taken it, so artifact versioning becomes far less meaningful, and so does packaging and releasing a shared library in the first place. In practice, internal services are usually deployed through continuous delivery: each service is built from the latest source and released frequently, often several times a day. A library change then reaches production through its consumers' next routine deployment rather than through a release of its own. A packaged library is merely a handoff format between a provider and consumers who build separately; when consumers build directly from the library's source, there is nothing to hand off, and building, publishing, and hosting library packages becomes overhead. Deployable services are still built into artifacts such as binaries or container images, but shared libraries no longer need a release process of their own.
+In an organization, that wall protects little. Since the provider owns adoption, a change is not done until its consumers have taken it, so artifact versioning becomes far less meaningful, and so does packaging and releasing a shared library in the first place.
+
+In practice, internal services are usually deployed through continuous delivery: each service is built from the latest source and released frequently, often several times a day. A library change then reaches production through its consumers' next routine deployment rather than through a release of its own.
+
+A packaged library is merely a handoff format between a provider and consumers who build separately; when consumers build directly from the library's source, there is nothing to hand off, and building, publishing, and hosting library packages becomes overhead. Deployable services are still built into artifacts such as binaries or container images, but shared libraries no longer need a release process of their own.
 
 A monorepo completely embraces the idea of broader responsibility and abandons internal library versioning, along with packaging and releasing internal libraries. Consumers no longer wait for a provider to package and publish a new version before they can accept a change.
 
@@ -108,10 +112,10 @@ py_library(
     name = "consumer_lib",
     srcs = ["consumer.py"],
     deps = [
-      "//thirdparty/py/numpy",
-      "//thirdparty/py/pandas",
-      "//cool_org/internal_cool_lib",
-    ]
+        "//thirdparty/py/numpy",
+        "//thirdparty/py/pandas",
+        "//cool_org/internal_cool_lib",
+    ],
 )
 ```
 
@@ -142,11 +146,13 @@ Boundaries are still enforced; they just stop being repository boundaries.
 
 ## CI across an organization
 
-In the repo-per-project model, a project repo typically maintains its own CI pipelines for dependency setup, build, tests, and artifact publishing. Modern CI platforms offer reusable and versioned step components to avoid code duplication. As a result, CI works a lot like a regular dependency. Therefore, the same release hurdle applies to CI pipelines across projects in an organization.
+In the repo-per-project model, a project repo typically maintains its own CI pipelines for dependency setup, build, tests, and artifact publishing. Modern CI platforms offer reusable and versioned step components to avoid code duplication. As a result, CI works a lot like a regular dependency, so the same release hurdle applies to CI pipelines across projects in an organization.
 
-In addition, separate pipelines create gaps in validation. Tests of a library may pass while its changes break downstream applications. Checking those consumers requires additional coordination across repositories. Enterprises often build additional tooling to allow cross-project testing before changes are released, while these solutions can be costly to maintain and hard to use.
+In addition, separate pipelines create gaps in validation. Tests of a library may pass while its changes break downstream applications. Checking those consumers requires extra coordination across repositories. Enterprises often build additional tooling to allow cross-project testing before changes are released, but these solutions can be costly to maintain and hard to use.
 
-A monorepo allows shared CI infrastructure to validate related projects against the same source revision. Toolchains and policies can be maintained centrally, while affected consumers can be tested before a change merges. As the repository grows, running every build and test becomes impractical, so monorepo tools provide dependency-aware build systems to identify affected code, reuse fine-grained cached results, and execute work in parallel. For example, with Bazel, `bazel query 'rdeps(//..., //cool_org/internal_cool_lib)'` lists every target that transitively depends on a library, so CI builds and tests only those. The organization’s investment shifts from maintaining many pipelines to improving shared infrastructure.
+A monorepo allows shared CI infrastructure to validate related projects against the same source revision. Toolchains and policies can be maintained centrally, while affected consumers can be tested before a change merges.
+
+As the repository grows, running every build and test becomes impractical, so monorepo tools provide dependency-aware build systems to identify affected code, reuse fine-grained cached results, and execute work in parallel. For example, with Bazel, `bazel query 'rdeps(//..., //cool_org/internal_cool_lib)'` lists every target that transitively depends on a library, so CI builds and tests only those. The organization's investment shifts from maintaining many pipelines to improving shared infrastructure.
 
 A small build in a repository with ~500k configured targets: 1,102 actions were reused from cache, and only one actually ran. Most of the elapsed time went to analysis, which a warm Bazel server skips.
 
@@ -167,9 +173,9 @@ Sharing one trunk also means sharing its breakages. A bad commit to a widely use
 
 ## Bazel and alternatives
 
-Popular monorepo build systems include [Nx](https://nx.dev/), [Turborepo](https://turborepo.com/), [Pants](https://www.pantsbuild.org/), and Meta’s [Buck2](https://buck2.build/). For multilingual enterprises of all sizes, Bazel offers a great combination of proven scale, language support, and build infrastructure. Nx and Turborepo focus primarily on JavaScript and TypeScript, while Pants and Buck2 are polyglot but have smaller ecosystems. Bazel’s internal counterpart, Blaze, builds a repository at Google containing approximately two billion lines of code in nine million source files as of [2016](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext).
+Popular monorepo build systems include [Nx](https://nx.dev/), [Turborepo](https://turborepo.com/), [Pants](https://www.pantsbuild.org/), and Meta's [Buck2](https://buck2.build/). For polyglot enterprises of all sizes, Bazel combines proven scale, language support, and build infrastructure. Nx and Turborepo focus primarily on JavaScript and TypeScript, while Pants and Buck2 are polyglot but have smaller ecosystems. Bazel's internal counterpart, Blaze, was building a repository at Google containing approximately two billion lines of code in nine million source files in [2016](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext).
 
-Bazel’s community provides rules for many languages, alongside code generation, packaging, and container builds. Builds are hermetic: each action sees only its declared inputs, not whatever happens to be on the machine, so the same inputs should produce the same outputs. That is what makes its aggressive caching safe: it reuses build outputs and test results whenever their inputs remain unchanged, sharing that work across developers and CI. Remote caching integrates directly with Google Cloud Storage and supports Amazon S3 through cache servers such as bazel-remote. Combined with parallel and remote execution, these capabilities make Bazel a compelling foundation for enterprise development at scale.
+Bazel's community provides rules for many languages, alongside code generation, packaging, and container builds. Builds are hermetic: each action sees only its declared inputs, not whatever happens to be on the machine, so the same inputs should produce the same outputs. That is what makes its aggressive caching safe: it reuses build outputs and test results whenever their inputs remain unchanged, sharing that work across developers and CI. Remote caching integrates directly with Google Cloud Storage and supports Amazon S3 through cache servers such as bazel-remote. Combined with parallel and remote execution, these capabilities make Bazel a compelling foundation for enterprise development at scale.
 
 Put together, a Bazel monorepo might look like this. Every project shares one CI pipeline, one Bazel version, and one set of third-party dependencies, while `BUILD.bazel` files declare each project's targets and who may depend on them:
 
@@ -211,4 +217,4 @@ These costs are front-loaded, while the benefits compound as the number of inter
 
 Open source values project independence: separate repositories and immutable dependency versions let maintainers and consumers evolve on their own schedules. Enterprises have more integrated software and teams, making it less essential to package, version, and release each shared library independently. Many keep the repo-per-project model anyway, sometimes for good reasons such as access control or tooling cost, and sometimes simply because it is the default.
 
-For closely connected enterprise projects, a monorepo better supports coordinated changes, shared CI, and provider ownership through consumer adoption—an approach proven at major technology companies. Bazel’s mature rules ecosystem and scalable build infrastructure make it a strong choice for large polyglot repositories, provided the organization is willing to invest in that infrastructure.
+For closely connected enterprise projects, a monorepo better supports coordinated changes, shared CI, and providers who own adoption by their consumers—an approach proven at major technology companies. Bazel's mature rules ecosystem and scalable build infrastructure make it a strong choice for large polyglot repositories, provided the organization is willing to invest in that infrastructure.
